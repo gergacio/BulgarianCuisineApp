@@ -4,13 +4,13 @@ import {Home} from "./pages/home.js";
 import {Auth} from "./pages/auth.js";
 import {CreateRecipe} from "./pages/create-recipe";
 import {SavedRecipes} from "./pages/saved-recipes.js";
-import {NavBar} from "./components/navbar.js"
+import {Navbar} from "./components/navbar.js"
 
 function App() {
   return (
     <div className='App'>
       <Router>
-        <NavBar />
+        <Navbar />
         <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/auth' element={<Auth />}/>
@@ -24,3 +24,9 @@ function App() {
 }
 
 export default App;
+
+
+//packages
+//react-router-dom help cretae routes in diff pages inside website
+//axios for fetching data
+//react-cookie for dealing with cookies in react

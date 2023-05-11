@@ -26,9 +26,9 @@ const recipeSchema = mongoose.Schema({
   },
   userOwner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "users",
     required: true,
   },
 });
 
-export const RecipesModel = mongoose.model("Recipes", recipeSchema);
+export const RecipesModel = mongoose.model("recipes", recipeSchema);
