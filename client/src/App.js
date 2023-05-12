@@ -30,3 +30,7 @@ export default App;
 //react-router-dom help cretae routes in diff pages inside website
 //axios for fetching data
 //react-cookie for dealing with cookies in react
+
+//route systems
+//url of website is default route
+//element is component we gonna render when we go to given path

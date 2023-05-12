@@ -9,7 +9,7 @@ export const CreateRecipe = () => {
   const [cookies, _] = useCookies(["access_token"]);
   const [recipe, setRecipe] = useState({
     name: "",
-    description: "",
+    // description: "",
     ingredients: [],
     instructions: "",
     imageUrl: "",
@@ -21,14 +21,14 @@ export const CreateRecipe = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setRecipe({ ...recipe, [name]: value });
+    setRecipe({ ...recipe, [name]: value }); //change one specific parts from an object (name)
   };
 
   const handleIngredientChange = (event, index) => {
     const { value } = event.target;
-    const ingredients = [...recipe.ingredients];
+    const ingredients = [...recipe.ingredients]; 
     ingredients[index] = value;
-    setRecipe({ ...recipe, ingredients });
+    setRecipe({ ...recipe, ingredients: ingredients });
   };
 
   const handleAddIngredient = () => {
@@ -53,6 +53,7 @@ export const CreateRecipe = () => {
       console.error(error);
     }
   };
+  // console.log(recipe);
 
   return (
     <div className="create-recipe">
@@ -66,13 +67,13 @@ export const CreateRecipe = () => {
           value={recipe.name}
           onChange={handleChange}
         />
-        <label htmlFor="description">Description</label>
+        {/* <label htmlFor="description">Description</label>
         <textarea
           id="description"
           name="description"
           value={recipe.description}
           onChange={handleChange}
-        ></textarea>
+        ></textarea> */}
         <label htmlFor="ingredients">Ingredients</label>
         {recipe.ingredients.map((ingredient, index) => (
           <input

@@ -24,7 +24,7 @@ const recipeSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  userOwner: {
+  userOwner: { //keep truck user who create recipe
     type: mongoose.Schema.Types.ObjectId,
     ref: "users",
     required: true,

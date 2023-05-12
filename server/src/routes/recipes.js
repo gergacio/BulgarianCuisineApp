@@ -8,14 +8,16 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-      const result = await RecipesModel.find({});
-      res.status(200).json(result);
+      const result = await RecipesModel.find({}); //no conditions so get all documents 
+      res.status(200).json(result); //send back to frontend
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  router.post("/", verifyToken,async (req, res) => {
+  //create recipe
+
+  router.post("/", verifyToken, async (req, res) => {
     const recipe = new RecipesModel(req.body);
     try{
         const response = await recipe.save();
@@ -26,7 +28,9 @@ router.get("/", async (req, res) => {
     }
   });
 
-  router.put("/", verifyToken,async (req, res) => {
+  //save recipe
+
+  router.put("/", verifyToken, async (req, res) => {
 
     const recipe = await RecipesModel.findById(req.body.recipeID);
     const user = await UserModel.findById(req.body.userID);
@@ -43,6 +47,8 @@ router.get("/", async (req, res) => {
     }
   });
 
+  //get saved recipes by id
+
   router.get("/savedRecipes/ids/:userID", async (req, res) => {
     try {
       const user = await UserModel.findById(req.params.userID);
@@ -51,6 +57,8 @@ router.get("/", async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  //get saved recipes
 
   router.get("/savedRecipes/:userID", async (req, res) => {
     try {
@@ -61,10 +69,6 @@ router.get("/", async (req, res) => {
       res.status(500).json(err);
     }
   });
-
-
-  
-
 
 export {router as recipesRouter};
 

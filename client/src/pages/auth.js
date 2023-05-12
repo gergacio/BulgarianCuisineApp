@@ -11,10 +11,11 @@ export const Auth = () => {
     </div>
   );
 };
+//render two components just for current page(we no share them between pages)
 
 
 const Login = () => {
-  const [_, setCookies] = useCookies(["access_token"]);
+  const [_, setCookies] = useCookies(["access_token"]); //get access to func which set the cookie
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,9 +32,10 @@ const Login = () => {
         password,
       });
 
-      setCookies("access_token", result.data.token);
+      setCookies("access_token", result.data.token); //get jwt been sent from backend and set to our cookie
+      //set respond from api as our cookie
       window.localStorage.setItem("userID", result.data.userID);
-      navigate("/");
+      navigate("/"); //wehn login we ridireted to home page
     } catch (error) {
       console.error(error);
     }
