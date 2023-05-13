@@ -1,69 +1,59 @@
-import express, { json } from "express";
+import express from "express";
 import jwt from "jsonwebtoken";
-import bcrypt from 'bcrypt'; //used for hashing passwords
-import { UserModel } from "../models/Users.js";
+import bcrypt from "bcrypt";
 
 const router = express.Router();
+import { UserModel } from "../models/Users.js";
 
-//routes
+router.post("/register", async (req, res) => {
+  const { username, password } = req.body;
+  const user = await UserModel.findOne({ username });
+  if (user) {
 
-//register
-router.post('/register', async (req, res) => {
-    const {username, password} = req.body;
-
-    const user = await UserModel.findOne({username: username});
-
-    if(user){
-        return res.json({message: "User already exist!"});
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    //add data to db with mongoose
-
-    const newUser = new UserModel({username, password: hashedPassword});
-
-    await newUser.save();
-
-    res.json({message: "User Registered Successfully"});
-});
-
-router.post('/login',async (req, res) => {
-    const {username, password} = req.body;
-    const user = await UserModel.findOne({username});
-
-    if(!user){
-        return json({message: "User Doesn't exist!"});
-    }
-
-    const isPassowrdValid = await bcrypt.compare(password, user.password);
-    //algo for hashing always return same value so we can compare (no unhashed exist)
-
-    if(!isPassowrdValid){
-        return res.json({message: "Username or Password Incorrect!"});
-    }
-
-    const token = jwt.sign({id: user._id}, "secret");
-    //token is string but can converted in object, use secret to verify it
-    res.json({token, userID: user._id});
-
+    return res.status(400).json({ message: "Username already exists" });
+  }
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const newUser = new UserModel({ username, password: hashedPassword });
+  await newUser.save();
+  res.json({ message: "User registered successfully" });
 
 });
 
-export {router as userRouter};
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  const user = await UserModel.findOne({ username });
+
+  if (!user) {
+    return res
+      .status(400)
+      .json({ message: "Username or password is incorrect" });
+  }
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+  if (!isPasswordValid) {
+    return res
+      .status(400)
+      .json({ message: "Username or password is incorrect" });
+  }
+  const token = jwt.sign({ id: user._id }, "secret");
+  res.json({ token, userID: user._id });
+});
+
+export { router as userRouter };
 
 export const verifyToken = (req, res, next) => {
-    const token = req.headers.authorization;
-    if(token){
-        jwt.verify(token, "secret", (err) => {
-            if(err) return res.sendStatus(403);
-            next();
-        });
-    } else {
-        res.sendStatus(401);
-    }
-}
-
+  const authHeader = req.headers.authorization;
+  if (authHeader) {
+    jwt.verify(authHeader, "secret", (err) => {
+      if (err) {
+        return res.sendStatus(403);
+      }
+      next();
+    });
+  } else {
+    res.sendStatus(401);
+  }
+};
 //JSON web Token and MERN
 //when we login we use token to represent our login session
 //when users do request they have to prove they are original users which login

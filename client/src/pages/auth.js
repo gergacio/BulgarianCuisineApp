@@ -6,8 +6,14 @@ import { useNavigate } from "react-router-dom";
 export const Auth = () => {
   return (
     <div className="auth">
-      <Login />
-      <Register />
+      <div>
+        <Login />
+      </div>
+      <div>
+        <Register />
+      </div>
+    
+   
     </div>
   );
 };
@@ -37,6 +43,7 @@ const Login = () => {
       window.localStorage.setItem("userID", result.data.userID);
       navigate("/"); //wehn login we ridireted to home page
     } catch (error) {
+      
       console.error(error);
     }
   };
@@ -52,6 +59,7 @@ const Login = () => {
             id="username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
+            required
           />
         </div>
         <div className="form-group">
@@ -61,6 +69,7 @@ const Login = () => {
             id="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </div>
         <button type="submit">Login</button>
@@ -101,6 +110,7 @@ const Register = () => {
             id="username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
+            required
           />
         </div>
         <div className="form-group">
@@ -110,6 +120,7 @@ const Register = () => {
             id="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </div>
         <button type="submit">Register</button>
