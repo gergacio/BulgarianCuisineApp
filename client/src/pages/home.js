@@ -54,26 +54,38 @@ export const Home = () => {
   };
 
   const isRecipeSaved = (id) => savedRecipes.includes(id);
+  console.log();
 
   return (
     <div className="home">
-      <h1 className="recipesHeading">Recipes</h1>
+      <div className="imghome imghome-cover">
+        <img src="https://ourhomebulgaria.com/wp-content/uploads/2018/08/rila_panevritmia_horo_2.jpg" alt="img"/>
+        <h1 className="recipesHeading">Traditional Bulgarian Food</h1>
+      </div>
+    
       <ul>
         {recipes.map((recipe) => (
           <li key={recipe._id}>
             <div>
               <h2>{recipe.name}</h2>
+            
               <button
                 onClick={() => saveRecipe(recipe._id)}
-                disabled={isRecipeSaved(recipe._id)}
+                disabled={isRecipeSaved(recipe._id)}s
               >
                 {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
               </button>
             </div>
             <div className="instructions">
-              <p>{recipe.instructions}</p>
+              <p>{recipe.description}</p>
+        
             </div>
-            <img src={recipe.imageUrl} alt={recipe.name} />
+      
+    
+            <div className="example example-cover">
+              <img src={recipe.imageUrl} alt={recipe.name} />
+            </div>
+           
             <p>Cooking Time: {recipe.cookingTime} minutes</p>
           </li>
         ))}

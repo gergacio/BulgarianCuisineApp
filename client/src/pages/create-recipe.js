@@ -9,7 +9,7 @@ export const CreateRecipe = () => {
   const [cookies, _] = useCookies(["access_token"]);
   const [recipe, setRecipe] = useState({
     name: "",
-    // description: "",
+    description: "",
     ingredients: [],
     instructions: "",
     imageUrl: "",
@@ -21,14 +21,14 @@ export const CreateRecipe = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setRecipe({ ...recipe, [name]: value }); //change one specific parts from an object (name)
+    setRecipe({ ...recipe, [name]: value });
   };
 
   const handleIngredientChange = (event, index) => {
     const { value } = event.target;
-    const ingredients = [...recipe.ingredients]; 
+    const ingredients = [...recipe.ingredients];
     ingredients[index] = value;
-    setRecipe({ ...recipe, ingredients: ingredients });
+    setRecipe({ ...recipe, ingredients });
   };
 
   const handleAddIngredient = () => {
@@ -50,11 +50,9 @@ export const CreateRecipe = () => {
       alert("Recipe Created");
       navigate("/");
     } catch (error) {
-      alert("You need permission to perform this action!");
       console.error(error);
     }
   };
-  // console.log(recipe);
 
   return (
     <div className="create-recipe">
@@ -69,13 +67,16 @@ export const CreateRecipe = () => {
           onChange={handleChange}
           required
         />
-        {/* <label htmlFor="description">Description</label>
+
+      <label htmlFor="description">Description</label>
         <textarea
           id="description"
           name="description"
           value={recipe.description}
           onChange={handleChange}
-        ></textarea> */}
+          required
+        ></textarea>
+
         <label htmlFor="ingredients">Ingredients</label>
         {recipe.ingredients.map((ingredient, index) => (
           <input
@@ -90,6 +91,7 @@ export const CreateRecipe = () => {
         <button type="button" onClick={handleAddIngredient}>
           Add Ingredient
         </button>
+
         <label htmlFor="instructions">Instructions</label>
         <textarea
           id="instructions"
@@ -98,6 +100,7 @@ export const CreateRecipe = () => {
           onChange={handleChange}
           required
         ></textarea>
+
         <label htmlFor="imageUrl">Image URL</label>
         <input
           type="text"
@@ -107,6 +110,7 @@ export const CreateRecipe = () => {
           onChange={handleChange}
           required
         />
+
         <label htmlFor="cookingTime">Cooking Time (minutes)</label>
         <input
           type="number"
