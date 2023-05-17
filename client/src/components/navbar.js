@@ -14,7 +14,7 @@ export const Navbar = () => {
     navigate("/auth");
   };
   return (
-    <div className="navbar">
+    <div className="navbar" id="navId">
 
           <Link to="/">Home</Link>      
         {!cookies.access_token ? (
@@ -23,7 +23,7 @@ export const Navbar = () => {
           <>
               <Link to="/create-recipe">Create Recipe</Link>
               <Link to="/saved-recipes">Saved Recipes</Link>
-              <button onClick={logout}> Logout </button>
+              <button className="nav-btn" onClick={logout}> Logout </button>
           </>
       
         )}

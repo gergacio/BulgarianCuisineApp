@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useGetUserID } from "../hooks/useGetUserID";
+import { FaArrowUp } from "react-icons/fa";
 import axios from "axios";
 
 export const SavedRecipes = () => {
@@ -21,25 +22,24 @@ export const SavedRecipes = () => {
     fetchSavedRecipes();
   }, []);
   return (
-    <div className="saved-recipes">
-      <h1>Saved Recipes</h1>
+    <div className="saved-recipes" id="save-recipeId">
+      <h1>My Saved Recipes</h1>
     
       <ul>
         {savedRecipes.map((recipe) => (
           <li key={recipe._id}>
             <div>
-              <h2>{recipe.name}</h2>
-          
-            </div>
-            <div className="saved-recipe saved-recipe-cover">
-             <img src={recipe.imageUrl} alt={recipe.name} />
+              <h2>{recipe.name}</h2>       
             </div>
             <p>{recipe.instructions}</p>
-             <p>Cooking Time: {recipe.cookingTime} minutes</p>
-        
+             <p>Cooking Time: {recipe.cookingTime} minutes</p>    
           </li>
         ))}
       </ul>
+      <div>
+       <a href="/saved-recipes/#save-recipeId" className="up"><FaArrowUp /></a>
+      </div>
+    
     </div>
   );
 };

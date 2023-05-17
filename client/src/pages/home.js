@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useGetUserID } from "../hooks/useGetUserID";
 import { useCookies } from 'react-cookie';
 import { useNavigate } from "react-router-dom";
+import { FaArrowUp } from 'react-icons/fa';
 import axios from "axios";
 
 export const Home = () => {
@@ -57,39 +58,35 @@ export const Home = () => {
   console.log();
 
   return (
-    <div className="home">
+    <div className="home" id="home">
       <div className="imghome imghome-cover">
-        <img src="https://ourhomebulgaria.com/wp-content/uploads/2018/08/rila_panevritmia_horo_2.jpg" alt="img"/>
-        <h1 className="recipesHeading">Traditional Bulgarian Food</h1>
+        {/* <img src="https://ourhomebulgaria.com/wp-content/uploads/2018/08/rila_panevritmia_horo_2.jpg" alt="img"/> */}
+        <h1 className="recipesHeading"><span className="white">Traditional</span> <span className="green"> Bulgarian</span> <span className="red">Food</span></h1>
       </div>
     
-      <ul>
+      <ul >
         {recipes.map((recipe) => (
-          <li key={recipe._id}>
-            <div>
+          <li key={recipe._id} className="recipes">
+     
               <h2>{recipe.name}</h2>
-            
-              <button
+              <div className="example example-cover">
+                 <img src={recipe.imageUrl} alt={recipe.name} />
+              </div>
+              <p>{recipe.description}</p>
+          
+             <p>Cooking Time: {recipe.cookingTime} minutes</p>
+            <p><button className="save-btn"
                 onClick={() => saveRecipe(recipe._id)}
                 disabled={isRecipeSaved(recipe._id)}s
               >
                 {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
-              </button>
-            </div>
-            <div className="instructions">
-              <p>{recipe.description}</p>
-        
-            </div>
-      
-    
-            <div className="example example-cover">
-              <img src={recipe.imageUrl} alt={recipe.name} />
-            </div>
-           
-            <p>Cooking Time: {recipe.cookingTime} minutes</p>
+              </button></p>
           </li>
         ))}
       </ul>
+      <div>
+       <a href="/#home" className="up"><FaArrowUp /></a>
+      </div>
     </div>
   );
 };
