@@ -116,8 +116,8 @@ input {
   align-items: center;
   padding: 20px;
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+
   margin-top: 10rem;
   margin-bottom: 25rem;
   width: 25rem;
@@ -146,8 +146,13 @@ input {
   color: var(--burnoak);
 
 }
+.create-recipe:hover {
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 .create-btn:hover {
   background-color: white;
+
 }
 .create-btn:active {
   background-color: red;
@@ -302,6 +307,21 @@ input {
   background-color:white;
 
 }
+.logo {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.logo > img {
+  width: 30vw;
+  height: 30vw;
+}
+
+.logo-cover > img {
+  width: 30vw;
+  height: 30vw;
+  object-fit: cover;
+}
 
 .example {
   margin: 1em 0;
@@ -396,12 +416,12 @@ input {
 }
 .white {
   color: white;
-  background-color: dodgerblue;
+  background-color: #000090;
   padding: .5rem;
 }
 .white:hover {
   background-color: white;
-  color: dodgerblue;
+  color: #000090;
 }
 .green {
   color: var(--green);
@@ -418,4 +438,9 @@ input {
 .up:hover {
   background-color: white;
  
+}
+
+div.logo:hover {
+  /* transform: rotate(20deg); */
+  transform: skewY(10deg);
 }

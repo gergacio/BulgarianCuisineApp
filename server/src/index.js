@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import express from "express" //node framework to create API
 import cors from 'cors'; //allows you to set up rules between back and front
 import mongoose from 'mongoose'; //Node.js ODM library for Mongo (allows us to get schema), queries to db in simple way
@@ -17,7 +20,7 @@ app.use("/recipes", recipesRouter);
 //generate connection towords our server
 //use env variables for password
 
-mongoose.connect('mongodb+srv://ggeorgeuk:MernPassword123@recipes.dtob3ti.mongodb.net/recipes?retryWrites=true&w=majority',  {
+mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@recipes.dtob3ti.mongodb.net/recipes?retryWrites=true&w=majority`,  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

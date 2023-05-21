@@ -61,7 +61,10 @@ export const Home = () => {
     <div className="home" id="home">
       <div className="imghome imghome-cover">
         {/* <img src="https://ourhomebulgaria.com/wp-content/uploads/2018/08/rila_panevritmia_horo_2.jpg" alt="img"/> */}
-        <h1 className="recipesHeading"><span className="white">Traditional</span> <span className="green"> Bulgarian</span> <span className="red">Food</span></h1>
+        <h1 className="recipesHeading"><span className="white">Traditional</span> <span className="green"> Bulgarian</span> <span className="red">Cuisine</span></h1>
+        <div className="logo logo-cover">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR83qeQeObGKYbwWeLl_vx20VPdeAhWO_MhlA&usqp=CAU"/>
+       </div>
       </div>
     
       <ul >
