@@ -30,7 +30,7 @@ List the ready features here:
 
 ## Screenshots
 ![Example screenshot](./screenshots/home_page.png)
-![Example screenshot](./screenshots/shopska_salad.png)
+<!-- ![Example screenshot](./screenshots/shopska_salad.png) -->
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Setup
