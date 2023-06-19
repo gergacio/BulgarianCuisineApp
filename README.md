@@ -1,8 +1,7 @@
 # Bulgarian Cuisine App
 ## Tools and technologies used: Visual Studio Code | MongoDB | Express | React | Node
 
-# Project Name
-> Outline a brief description of your project.
+# Bulgarian Cuisine App
 > Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
@@ -18,44 +17,37 @@
 
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
-
+- Bulgarian Cuisine App is an online provider of information about traditional Bulgarian cuisine, food, recipes, restaurants.
 
 ## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
-
+- MongoDB -  v6.0.1
+- Express.js - v4.18.2
+- React - v18.2.0
+- Node.js - v19.8.1
+- Visual Studio Code - v1.71.2
+- macOS - v12.6
 
 ## Features
 List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
-
+- Register/Login
+- Save Recipe
 
 ## Screenshots
 ![Example screenshot](./screenshots/home_page.png)
-![Example screenshot](./screenshots/home_page.png)
+![Example screenshot](./screenshots/shopska_salad.png.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
-
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
+<!-- Proceed to describe how to install / get started with the project. -->
 
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
+<!-- How does one go about using it? -->
+
 
 ## Project Status
 Project is: _in progress_ 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by [@GGG](http://3gbg.s3-website.eu-west-2.amazonaws.com/#intro) - feel free to contact me!
