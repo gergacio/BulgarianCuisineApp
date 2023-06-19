@@ -6,8 +6,8 @@
 * [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
-<!-- * [Setup](#setup)
-* [Usage](#usage) -->
+* [Setup](#setup)
+* [Usage](#usage)
 * [Project Status](#project-status)
 * [Contact](#contact)
 <!-- * [License](#license) -->
