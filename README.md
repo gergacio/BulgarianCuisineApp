@@ -1,7 +1,4 @@
 # Bulgarian Cuisine App
-## Tools and technologies used: Visual Studio Code | MongoDB | Express | React | Node
-
-# Bulgarian Cuisine App
 > Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
@@ -14,7 +11,6 @@
 * [Project Status](#project-status)
 * [Contact](#contact)
 <!-- * [License](#license) -->
-
 
 ## General Information
 - Bulgarian Cuisine App is an online provider of information about traditional Bulgarian cuisine, food, recipes, restaurants.
@@ -34,7 +30,7 @@ List the ready features here:
 
 ## Screenshots
 ![Example screenshot](./screenshots/home_page.png)
-![Example screenshot](./screenshots/shopska_salad.png.png)
+![Example screenshot](./screenshots/shopska_salad.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Setup
