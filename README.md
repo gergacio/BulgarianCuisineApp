@@ -26,7 +26,7 @@
 ## Features
 List the ready features here:
 - Register/Login
-- Full CRUD of Recipes
+- Full CRUD on Recipes
 
 ## Screenshots
 ![Example screenshot](./screenshots/home_page.png)
