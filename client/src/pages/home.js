@@ -5,18 +5,21 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowUp } from 'react-icons/fa';
 import axios from "axios";
 
+
+
 export const Home = () => {
   const [recipes, setRecipes] = useState([]);
   const [savedRecipes, setSavedRecipes] = useState([]);
   const [cookies, _] = useCookies(["access_token"]);
   const navigate = useNavigate();
+  const BASE_URL = "http://localhost:8080";
 
   const userID = useGetUserID();
 
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/recipes");
+        const response = await axios.get(`${BASE_URL}/recipes`);
         setRecipes(response.data);
       } catch (err) {
         console.log(err);
@@ -26,7 +29,7 @@ export const Home = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/ids/${userID}`
+          `${BASE_URL}/recipes/savedRecipes/ids/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (err) {
@@ -40,7 +43,7 @@ export const Home = () => {
 
   const saveRecipe = async (recipeID) => {
     try {
-      const response = await axios.put("http://localhost:3001/recipes", {
+      const response = await axios.put(`${BASE_URL}/recipes`, {
         recipeID,
         userID,
       },
@@ -62,33 +65,36 @@ export const Home = () => {
       <div className="imghome imghome-cover">
         {/* <img src="https://ourhomebulgaria.com/wp-content/uploads/2018/08/rila_panevritmia_horo_2.jpg" alt="img"/> */}
         <h1 className="recipesHeading"><span className="white">Traditional</span> <span className="green"> Bulgarian</span> <span className="red">Cuisine</span></h1>
-        <div className="logo logo-cover">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR83qeQeObGKYbwWeLl_vx20VPdeAhWO_MhlA&usqp=CAU"/>
+        <div className="logo logo-cover shadows">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR83qeQeObGKYbwWeLl_vx20VPdeAhWO_MhlA&usqp=CAU"/>
        </div>
       </div>
     
-      <ul >
+      <ul className="shadows">
         {recipes.map((recipe) => (
-          <li key={recipe._id} className="recipes">
-     
-              <h2>{recipe.name}</h2>
-              <div className="example example-cover">
-                 <img src={recipe.imageUrl} alt={recipe.name} />
-              </div>
-              <p>{recipe.description}</p>
-          
-             <p>Cooking Time: {recipe.cookingTime} minutes</p>
-            <p><button className="save-btn"
-                onClick={() => saveRecipe(recipe._id)}
-                disabled={isRecipeSaved(recipe._id)}s
-              >
-                {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
-              </button></p>
-          </li>
+          <div className="recipes">
+               <li key={recipe._id} >
+                  
+                <h2>{recipe.name}</h2>
+                <div className="example example-cover">
+                   <img src={recipe.imageUrl} alt={recipe.name} />
+                </div>
+                  <p>{recipe.description}</p>
+              
+                  <p>Cooking Time: {recipe.cookingTime} minutes</p>
+                <p><button className="save-btn"
+                    onClick={() => saveRecipe(recipe._id)}
+                    disabled={isRecipeSaved(recipe._id)}s
+                  >
+                    {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
+                  </button></p>
+              </li>
+          </div>
+
         ))}
       </ul>
       <div>
-       <a href="/#home" className="up"><FaArrowUp /></a>
+       {/* <a href="/#home" className="up"><FaArrowUp /></a> */}
       </div>
     </div>
   );
