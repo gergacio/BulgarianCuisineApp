@@ -3,6 +3,9 @@ import { useGetUserID } from "../hooks/useGetUserID";
 import { FaArrowUp } from "react-icons/fa";
 import axios from "axios";
 
+
+const BASE_URL = "http://localhost:8080";
+
 export const SavedRecipes = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
   const userID = useGetUserID();
@@ -11,7 +14,7 @@ export const SavedRecipes = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/${userID}`
+          `${BASE_URL}/recipes/savedRecipes/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (err) {
@@ -27,7 +30,7 @@ export const SavedRecipes = () => {
     
       <ul>
         {savedRecipes.map((recipe) => (
-          <li key={recipe._id}>
+          <li className="saved-shadow" key={recipe._id}>
             <div>
               <h2>{recipe.name}</h2>       
             </div>
@@ -37,7 +40,7 @@ export const SavedRecipes = () => {
         ))}
       </ul>
       <div>
-       <a href="/saved-recipes/#save-recipeId" className="up"><FaArrowUp /></a>
+       {/* <a href="/saved-recipes/#save-recipeId" className="up"><FaArrowUp /></a> */}
       </div>
     
     </div>

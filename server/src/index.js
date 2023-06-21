@@ -1,6 +1,4 @@
 import * as dotenv from 'dotenv';
-dotenv.config();
-
 import express from "express" //node framework to create API
 import cors from 'cors'; //allows you to set up rules between back and front
 import mongoose from 'mongoose'; //Node.js ODM library for Mongo (allows us to get schema), queries to db in simple way
@@ -8,27 +6,37 @@ import mongoose from 'mongoose'; //Node.js ODM library for Mongo (allows us to g
 import {userRouter} from './routes/users.js';
 import {recipesRouter} from './routes/recipes.js';
 
+const PORT = process.env.PORT || 8080;
+
 const app = express();
 
 //middleware
 app.use(express.json()); //get data from front we convert in json
 app.use(cors()); 
-
-app.use("/auth", userRouter);
-app.use("/recipes", recipesRouter);
+dotenv.config();
 
 //generate connection towords our server
 //use env variables for password
 
-mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@recipes.dtob3ti.mongodb.net/recipes?retryWrites=true&w=majority`,  {
+  //start server
+  //use nodemon to restart the server after we made changes
+app.listen(PORT, () => {
+  mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@recipes.dtob3ti.mongodb.net/recipes?retryWrites=true&w=majority`,  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
 
-  //start server
-  //use nodemon to restart the server after we made changes
-app.listen(3001, () => {
-    console.log("server started");
+  const db = mongoose.connection;
+  db.on("error", console.error.bind(console, "connection error: "));
+  db.once("open", function () {
+  console.log("Connected successfully to mongodb");
+});
+
+app.use("/auth", userRouter);
+app.use("/recipes", recipesRouter);
+
+
+console.log("server is successfully running on ", PORT);
 });
 
 

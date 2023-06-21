@@ -90,7 +90,7 @@ input {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .navbar a {
@@ -114,15 +114,30 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   background-color: white;
-
-
   margin-top: 10rem;
-  margin-bottom: 25rem;
+  margin-bottom: 40rem;
   width: 25rem;
   color: var(--burnoak);
 }
+.create-recipe h2 {
+  color: var(--green);
+  margin-top: 10rem;
+  margin-bottom: 20rem;
+}
+.saved-recipes  h2 {
+  color: var(--green);
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+
+}
+.saved-recipes  h1 {
+  color: var(--green);
+  margin-top: 15rem;
+  margin-bottom: 15rem;
+
+}
+
 .create-recipe form {
   display: flex;
   flex-direction: column;
@@ -146,10 +161,10 @@ input {
   color: var(--burnoak);
 
 }
-.create-recipe:hover {
+/* .create-recipe:hover {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+} */
 .create-btn:hover {
   background-color: white;
 
@@ -173,7 +188,7 @@ input {
 /* home pages */
 .home {
   margin-top: 5rem;
-  margin-bottom: 15rem;
+  margin-bottom: 35rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -195,28 +210,29 @@ input {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  /* background-color: whitesmoke; */
+  /* box-shadow: 5px 10px whitesmoke; */
+
 }
-.home li:hover {
+/* .home li:hover {
   border: .2rem solid whitesmoke;
   border-radius: .5%;
-
-
-}
+} */
 
 .home h1 {
   
     display: block;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-top: 10rem;
     margin-bottom: 10rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     font-weight: bold;
     font-family: var(--mono);
 }
 .home h2 {
   display: block;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 10rem;
   margin-bottom: 10rem;
   margin-left: 5rem;
@@ -225,11 +241,13 @@ input {
   font-family: var(--mono);
 
 }
-.home h2:hover {
+
+
+/* .home h2:hover {
 
   border-bottom: .1px solid var(--green);
  
-}
+} */
 
 .save-btn {
   display: inline-block;
@@ -262,7 +280,9 @@ input {
 .recipes > p {
   color: var(--burnoak);
   font-size: 3rem;
+ 
 }
+
 
 
 /* instructions */
@@ -276,37 +296,72 @@ input {
 
 
 /* footer */
+
 .footer {
-
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color:  #1B1212;;
-  width: 100%;
-  color: white;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9VgeZanZRQ6trXX_ww4chpGhbFHPv6NEcGsfa-mdihkUqJydZXl077nPvqVOrNxUh_V8&usqp=CAU");
-}
-
-.footer ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 2rem 0;
+ 
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  gap: 3rem;
-  font-size: 3rem;
-  
-} 
-.footer li {
-  background-color: lightgray;
-  padding: .2rem;
-}
-.footer li:hover {
-  background-color:white;
+  align-items: start;
+  gap: 5rem;
+  font-size: 1.5rem;
+  padding: 2rem;
+  background-color: var(--green);
+  color: white;
 
 }
+.footer-list {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  font-size: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+}
+.footer-list a {
+  color: white;
+  text-decoration: none;
+}
+.footer-list a:hover {
+
+  border-bottom: 1px solid white
+}
+.icons {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.icons:hover {
+  background-color: royalblue;
+}
+
+.fontfooer {
+  font-size: small;
+  padding-top: 3rem;
+
+}
+.outer {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: end;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+}
+.footer-container {
+  width: 100%;
+  background-color: var(--green);
+  color: white;
+
+}
+
+
 .logo {
-  margin: 1em 0;
+  margin: 20rem;
   text-align: center;
 }
 
@@ -324,6 +379,7 @@ input {
 .example {
   margin: 1em 0;
   text-align: center;
+  box-shadow: 5px 10px #888888;
 }
 
 .example > img {
@@ -360,7 +416,7 @@ input {
   /* margin: 1em 0;
   text-align: center; */
   margin-top: 5rem;
-  margin-bottom: 15rem;
+  margin-bottom: 35rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -385,6 +441,7 @@ input {
   width: 30vw;
   height: 30vw;
 }
+
 
 .saved-recipe-cover > img {
   width: 30vw;
@@ -442,3 +499,117 @@ div.logo:hover {
   /* transform: rotate(20deg); */
   transform: skewY(10deg);
 }
+
+
+
+   @media (min-width: 420px) {
+    .home h1, h2 {
+      font-size: 2rem;
+      color: red;
+    }
+    }
+
+    /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .home h1{
+    font-size: 2rem;
+  }
+  .home p {
+    font-size: 1.2rem;
+  }
+  .saved-recipes h1 {
+    font-size: 3rem;
+  }
+
+  .saved-recipes h2 {
+    font-size: 2.5rem;
+  }
+
+  .saved-recipes p {
+    font-size: 1.5rem;
+  }
+  .navbar {
+    font-size: 1.2rem;
+  }
+  .nav-btn {
+    font-size: 1.5rem;
+  }
+  .create-recipe h2 {
+    font-size: 2.5rem;;
+  }
+  .create-recipe p{
+    font-size: 2rem;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .home h1{
+    font-size: 1.5rem;
+  }
+  .home p {
+    font-size: 1rem;
+  }
+  .saved-recipes h1 {
+    font-size: 2rem;
+  }
+  .saved-recipes h2 {
+    font-size: 1.6rem;
+  }
+  .saved-recipes p {
+    font-size: 1.2rem;
+  }
+  .navbar {
+    font-size: 1rem;
+  }
+  .nav-btn {
+    font-size: 1rem;
+  }
+  .create-recipe h2 {
+    font-size: 1.5rem;;
+  }
+  .create-recipe p{
+    font-size: 1rem;
+  }
+
+
+}
+.home p {
+  width: 40vw;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.shadows {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.recipe-shadow {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.recipes {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  color: var(--green);
+}
+.recipes h2{
+color: var(--green);
+}
+.recipes p{
+  font-style: italic;
+  }
+  .saved-shadow {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    padding: 1rem;
+  }
+  .shadow-create-recipe {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  }
+
+
+
