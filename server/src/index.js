@@ -21,7 +21,7 @@ dotenv.config();
   //start server
   //use nodemon to restart the server after we made changes
 app.listen(PORT, () => {
-  mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@recipes.dtob3ti.mongodb.net/recipes?retryWrites=true&w=majority`,  {
+  mongoose.connect(`mongodb+srv://${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASS}@recipes.dtob3ti.mongodb.net/recipes?retryWrites=true&w=majority`,  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

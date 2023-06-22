@@ -23,8 +23,12 @@ export const Auth = () => {
 //render two components just for current page(we no share them between pages)
 
 
+
+
 const Login = () => {
-  const BASE_URL = "13.42.226.241:8080";
+  const BASE_URL = "http://localhost:8082";
+  // const BASE_URL = "http://13.40.88.69:8082";
+
   const [_, setCookies] = useCookies(["access_token"]); //get access to func which set the cookie
 
   const [username, setUsername] = useState("");
@@ -83,7 +87,8 @@ const Login = () => {
 };
 
 const Register = () => {
-  const BASE_URL = "http://13.42.226.241:8080";
+  const BASE_URL = "http://localhost:8082";
+  // const BASE_URL = "http://13.40.88.69:8082";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
