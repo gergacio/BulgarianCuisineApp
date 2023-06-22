@@ -6,7 +6,7 @@ import mongoose from 'mongoose'; //Node.js ODM library for Mongo (allows us to g
 import {userRouter} from './routes/users.js';
 import {recipesRouter} from './routes/recipes.js';
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 
 const app = express();
 
