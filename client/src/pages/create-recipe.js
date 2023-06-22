@@ -4,7 +4,7 @@ import { useGetUserID } from "../hooks/useGetUserID";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
-const BASE_URL = "http://52.56.201.229:8082";
+const BASE_URL = "http://18.130.121.35:8082";
 // const BASE_URL = "http://localhost:8082";
 
 export const CreateRecipe = () => {

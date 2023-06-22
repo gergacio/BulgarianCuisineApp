@@ -4,7 +4,7 @@ import { FaArrowUp } from "react-icons/fa";
 import axios from "axios";
 
 
-const BASE_URL = "http://52.56.201.229:8082";
+const BASE_URL = "http://18.130.121.35:8082";
 // const BASE_URL = "http://localhost:8082";
 
 export const SavedRecipes = () => {
