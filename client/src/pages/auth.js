@@ -3,9 +3,10 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://localhost:8080";
+
 
 export const Auth = () => {
+
   return (
     <div className="auth">
       <div>
@@ -23,6 +24,7 @@ export const Auth = () => {
 
 
 const Login = () => {
+  const BASE_URL = "http://18.168.243.51:8080";
   const [_, setCookies] = useCookies(["access_token"]); //get access to func which set the cookie
 
   const [username, setUsername] = useState("");
@@ -81,6 +83,7 @@ const Login = () => {
 };
 
 const Register = () => {
+  const BASE_URL = "http://18.168.243.51:8080";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

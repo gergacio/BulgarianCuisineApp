@@ -4,11 +4,13 @@ import { FaArrowUp } from "react-icons/fa";
 import axios from "axios";
 
 
-const BASE_URL = "http://localhost:8080";
+
 
 export const SavedRecipes = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
   const userID = useGetUserID();
+
+  const BASE_URL = "http://18.168.243.51:8080";
 
   useEffect(() => {
     const fetchSavedRecipes = async () => {

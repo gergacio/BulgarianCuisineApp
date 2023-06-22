@@ -12,7 +12,7 @@ export const Home = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
   const [cookies, _] = useCookies(["access_token"]);
   const navigate = useNavigate();
-  const BASE_URL = "http://localhost:8080";
+  const BASE_URL = "http://18.168.243.51:8080";
 
   const userID = useGetUserID();
 
