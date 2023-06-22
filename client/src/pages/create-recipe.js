@@ -4,6 +4,8 @@ import { useGetUserID } from "../hooks/useGetUserID";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
+const BASE_URL = "http://18.168.243.51:8080";
+
 export const CreateRecipe = () => {
   const userID = useGetUserID();
   const [cookies, _] = useCookies(["access_token"]);
@@ -40,7 +42,7 @@ export const CreateRecipe = () => {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:3001/recipes",
+        `${BASE_URL}/recipes`,
         { ...recipe },
         {
           headers: { authorization: cookies.access_token },
