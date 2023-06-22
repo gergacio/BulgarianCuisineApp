@@ -74,7 +74,7 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button className="save-btn" type="submit">Login</button>
       </form>
     </div>
   );
@@ -125,7 +125,7 @@ const Register = () => {
             required
           />
         </div>
-        <button type="submit">Register</button>
+        <button className="save-btn" type="submit">Register</button>
       </form>
     </div>
   );
