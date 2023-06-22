@@ -22,11 +22,11 @@ export const Footer = () => {
                       <p>Social media</p>
                       <ul class="footer-list">
                       
-                      <li><a class="icons" href="https://www.linkedin.com/in/georgi-georgiev-a07534ab/" target="_blank"><span class="fa-brands fa-linkedin linkItem" aria-hidden="true"></span>
-                      <span class="sr-only">LinkedIn</span></a></li>
-
-                    <li><a class="icons" href="https://github.com/gergacio" target="_blank"><span class="fa-brands fa-github linkItem" aria-hidden="true"></span> 
-                      <span class="sr-only">GitHub</span></a></li>
+                      <li>
+                        <a class="icons" href="https://www.linkedin.com/in/georgi-georgiev-a07534ab/" target="_blank"><span class="fa-brands fa-linkedin linkItem" aria-hidden="true"></span>
+                      <span class="sr-only">LinkedIn</span></a>  <a class="icons" href="https://github.com/gergacio" target="_blank"><span class="fa-brands fa-github linkItem" aria-hidden="true"></span> 
+                      <span class="sr-only">GitHub</span></a>
+                      </li>
                       </ul>
                   </div>
               
