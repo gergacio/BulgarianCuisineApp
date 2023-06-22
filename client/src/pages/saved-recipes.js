@@ -4,8 +4,8 @@ import { FaArrowUp } from "react-icons/fa";
 import axios from "axios";
 
 
-// const BASE_URL = "http://13.40.88.69:8082";
-const BASE_URL = "http://localhost:8082";
+const BASE_URL = "http://52.56.201.229:8082";
+// const BASE_URL = "http://localhost:8082";
 
 export const SavedRecipes = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);

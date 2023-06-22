@@ -26,8 +26,8 @@ export const Auth = () => {
 
 
 const Login = () => {
-  const BASE_URL = "http://localhost:8082";
-  // const BASE_URL = "http://13.40.88.69:8082";
+  // const BASE_URL = "http://localhost:8082";
+  const BASE_URL = "http://52.56.201.229:8082";
 
   const [_, setCookies] = useCookies(["access_token"]); //get access to func which set the cookie
 
@@ -87,8 +87,8 @@ const Login = () => {
 };
 
 const Register = () => {
-  const BASE_URL = "http://localhost:8082";
-  // const BASE_URL = "http://13.40.88.69:8082";
+  // const BASE_URL = "http://localhost:8082";
+  const BASE_URL = "http://52.56.201.229:8082";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
