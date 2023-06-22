@@ -41,17 +41,20 @@ body {
 /* auth page */
 
 .auth {
-  margin: 1rem;
-  padding: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 3rem;
   height: 150vh; 
+  color: var(--gren);
 }
 
 .auth-container {
+  /* margin-top: 10rem;
+  margin-bottom: 10rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,11 +64,16 @@ body {
   border-radius: 1rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+.auth-container h2{
+  color: var(--green);
+  margin-bottom: 10rem;
+}
 
 .form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  /* color: var(--green); */
 }
 
 label {
