@@ -10,7 +10,7 @@ export const SavedRecipes = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
   const userID = useGetUserID();
 
-  const BASE_URL = "http://18.168.243.51:8080";
+  const BASE_URL = "http://13.42.226.241:8080";
 
   useEffect(() => {
     const fetchSavedRecipes = async () => {

@@ -24,7 +24,7 @@ export const Auth = () => {
 
 
 const Login = () => {
-  const BASE_URL = "http://18.168.243.51:8080";
+  const BASE_URL = "13.42.226.241:8080";
   const [_, setCookies] = useCookies(["access_token"]); //get access to func which set the cookie
 
   const [username, setUsername] = useState("");
@@ -83,7 +83,7 @@ const Login = () => {
 };
 
 const Register = () => {
-  const BASE_URL = "http://18.168.243.51:8080";
+  const BASE_URL = "http://13.42.226.241:8080";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

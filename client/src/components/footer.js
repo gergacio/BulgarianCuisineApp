@@ -13,8 +13,8 @@ export const Footer = () => {
                       <p>Menu</p>
                       <ul class="footer-list">
                           <li><a class="link" href="/">Home</a></li>
-                          <li><a class="link" href="/create-recipe">Create Recipe</a></li>
-                          <li><a class="link" href="/saved-recipes">Saved Recipes</a></li>
+                          {/* <li><a class="link" href="/create-recipe">Create Recipe</a></li>
+                          <li><a class="link" href="/saved-recipes">Saved Recipes</a></li> */}
                        
                       </ul>           
                   </div>
