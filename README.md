@@ -29,7 +29,7 @@ List the ready features here:
 - Full CRUD on Recipes
 
 ## Screenshots
-<!-- ![Example screenshot](./screenshots/home_page.png) -->
+![Example screenshot](./screenshots/home_page.png)
 <!-- ![Example screenshot](./screenshots/shopska_salad.png) -->
 <!-- If you have screenshots you'd like to share, include them here. -->
 
